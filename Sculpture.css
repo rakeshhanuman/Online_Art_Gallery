@@ -1,0 +1,175 @@
+.sculpture-container {
+  padding: 6rem 2rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - 200px); /* Subtract header and footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+.sculpture-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.sculpture-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.sculpture-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.sculpture-card:hover {
+  transform: translateY(-5px);
+}
+
+.sculpture-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.sculpture-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sculpture-card:hover .sculpture-image img {
+  transform: scale(1.05);
+}
+
+.sculpture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.sculpture-card:hover .sculpture-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.overlay-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.overlay-content .artist {
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+.overlay-content .price {
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.view-details-btn {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: #333;
+  color: white;
+}
+
+.sculpture-info {
+  padding: 1.5rem;
+}
+
+.sculpture-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.sculpture-info .artist {
+  color: #666;
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+}
+
+.sculpture-info .description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.sculpture-info .price {
+  color: #333;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.inquire-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.inquire-btn:hover {
+  background: #444;
+}
+
+@media (max-width: 1024px) {
+  .sculpture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sculpture-container {
+    padding: 1rem;
+  }
+  
+  .sculpture-container h1 {
+    font-size: 2rem;
+  }
+  
+  .sculpture-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
