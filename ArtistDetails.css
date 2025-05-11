@@ -1,0 +1,120 @@
+/* ArtworkDetail.css */
+.artwork-detail-container {
+  padding: 8rem 2rem 4rem 2rem; /* Adjust padding to account for fixed header */
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artwork-detail-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 3rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-detail-image {
+  flex: 1 1 400px; /* Flex basis to control initial size and allow shrinking */
+  max-width: 100%; /* Ensure image wrapper doesn't exceed container width */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.artwork-detail-image img {
+  display: block; /* Remove extra space below image */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the container without distortion */
+}
+
+.artwork-detail-info {
+  flex: 1 1 300px; /* Flex basis for info section */
+  display: flex;
+  flex-direction: column;
+}
+
+.artwork-detail-info h1 {
+  font-size: 2.5rem;
+  color: #1a472a;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.artwork-detail-info .artist {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.artwork-detail-info .description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Allows description to take up available space */
+}
+
+.artwork-detail-info .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a472a;
+  margin-bottom: 2rem;
+}
+
+.add-to-cart-btn {
+  background-color: #1a472a;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: auto; /* Allow button to size based on content */
+  align-self: flex-start; /* Align button to the start of the flex container */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #143620;
+}
+
+/* Responsive adjustments for Artwork Detail */
+@media (max-width: 768px) {
+  .artwork-detail-content {
+    flex-direction: column; /* Stack image and info vertically */
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .artwork-detail-image {
+    flex-basis: auto; /* Reset flex basis */
+    width: 100%;
+    max-width: none; /* Allow image to take full width */
+  }
+
+  .artwork-detail-info {
+     flex-basis: auto; /* Reset flex basis */
+     width: 100%;
+  }
+
+   .artwork-detail-info h1 {
+    font-size: 2rem;
+   }
+
+   .artwork-detail-info .price {
+    font-size: 1.5rem;
+   }
+
+   .add-to-cart-btn {
+    width: 100%; /* Make button full width on smaller screens */
+    align-self: stretch; /* Stretch button to fill container */
+   }
+}
